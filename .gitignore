@@ -1,9 +1,10 @@
 node_modules
 dist/
+.cache
+yarn.lock
 
 **/*/node_modules
 **/*/coverage
-**/*/.cache
 **/*/yarn-error.log
 **/*/yalc.lock
 **/*/.yalc
