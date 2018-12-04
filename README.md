@@ -53,7 +53,7 @@ In Firefox or Chrome, browse to [http://localhost:1234](http://localhost:1234)
 
 Now keypoints can be received as OSC messages on port 9876.
 
-OSC messages will have an address pattern `/pose/n` (where `n` is the number of different poses (people) found in a frame) and all keypoints will follow as arguments in the order `| part | x | y |` where part is the keypoint body part and x and y are its position.
+OSC messages will have an address pattern `/pose/n` (where `n` is the number of different poses (people) found in a frame) and all keypoints will follow as arguments in the order `| part | x | y |` where part (string) is the keypoint body part and x and y (floats) are its coordinates.
 
 ### Keypoints
 
