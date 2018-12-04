@@ -11,3 +11,5 @@ dist/
 .rpt2_cache/
 
 *.pyc
+
+.rpt2_cache/
