@@ -16,7 +16,7 @@ PoseNet can be used to estimate either a single pose or multiple poses, meaning 
 
 ## Installation
 
-To get this running stand alone on your computer clone this repo and follow these steps:
+To get this running stand alone on your computer, clone this repo and follow these steps:
 
 Install node (using [homebrew](https://brew.sh/)):
 
@@ -47,6 +47,9 @@ In another terminal window run the bridge node application:
 ```sh
 node bridge.js
 ``` 
+
+In Firefox or Chrome, browse to [http://localhost:1234](http://localhost:1234)
+
 
 Now keypoints can be received as OSC messages on port 9876.
 
