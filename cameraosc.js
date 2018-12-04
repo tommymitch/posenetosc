@@ -286,7 +286,7 @@ function detectPoseInRealTime(video, net) {
 
           const {y, x} = keypoint.position;
           
-          message.add (i);
+          message.add (keypoint.part);
           message.add (x);
           message.add (y);
           osc.send (message);
