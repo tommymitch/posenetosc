@@ -266,23 +266,31 @@ function detectPoseInRealTime(video, net) {
     // For each pose (i.e. person) detected in an image, loop through the poses
     // and draw the resulting skeleton and keypoints if over certain confidence
     // scores
-    poses.forEach(({score, keypoints}) => {
-      if (score >= minPoseConfidence) {
-        if (guiState.output.showPoints) {
-          drawKeypoints(keypoints, minPartConfidence, ctx);
-        }
-        if (guiState.output.showSkeleton) {
-          drawSkeleton(keypoints, minPartConfidence, ctx);
+
+    for (let i = 0; i < poses.length; i++) 
+    {
+      const pose = poses[i];
+      if (pose.score >= minPoseConfidence) 
+      {
+         if (guiState.output.showPoints) {
+          drawKeypoints(pose.keypoints, minPartConfidence, ctx);
+         }
+         if (guiState.output.showSkeleton) {
+          drawSkeleton(pose.keypoints, minPartConfidence, ctx);
         }
         if (guiState.output.showBoundingBox) {
-          drawBoundingBox(keypoints, ctx);
+          drawBoundingBox(pose.keypoints, ctx);
         }
 
 
-        var message = new OSC.Message('/pose');
-        for (let i = 0; i < keypoints.length; i++) 
+        var message = new OSC.Message('/pose/' + i);
+        for (let j = 0; j < pose.keypoints.length; j++) 
         {
-          const keypoint = keypoints[i];
+          const keypoint = pose.keypoints[j];
+
+          if (keypoint.score < minPartConfidence) {
+             continue;
+          }
 
           const {y, x} = keypoint.position;
           
@@ -292,7 +300,35 @@ function detectPoseInRealTime(video, net) {
           osc.send (message);
         }
       }
-    });
+    }
+
+    // poses.forEach(({score, keypoints}) => {
+    //   if (score >= minPoseConfidence) {
+    //     if (guiState.output.showPoints) {
+    //       drawKeypoints(keypoints, minPartConfidence, ctx);
+    //     }
+    //     if (guiState.output.showSkeleton) {
+    //       drawSkeleton(keypoints, minPartConfidence, ctx);
+    //     }
+    //     if (guiState.output.showBoundingBox) {
+    //       drawBoundingBox(keypoints, ctx);
+    //     }
+
+
+    //     var message = new OSC.Message('/pose');
+    //     for (let j = 0; j < keypoints.length; j++) 
+    //     {
+    //       const keypoint = keypoints[j];
+
+    //       const {y, x} = keypoint.position;
+          
+    //       message.add (keypoint.part);
+    //       message.add (x);
+    //       message.add (y);
+    //       osc.send (message);
+    //     }
+    //   }
+    // });
 
     // End monitoring code for frames per second
     stats.end();
