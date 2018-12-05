@@ -1,6 +1,6 @@
 # Posenet to OSC 
 
-This repository contains a modified version of [PoseNet](https://github.com/tensorflow/tfjs-models/tree/master/posenet) by [Dan Oved](https://www.danioved.com/) that sends detected keypoints as OSC encoded datagram packets. This enables tracked keypoints to be used within any OSC compatible environment (Max/MSP, Python, PD, C++, Processing, you name it). This is effectively PoseNet + osc-js. 
+This repository contains a modified version of [PoseNet](https://github.com/tensorflow/tfjs-models/tree/master/posenet) by [Dan Oved](https://www.danioved.com/) that sends detected keypoints as OSC encoded datagram packets. This enables tracked keypoints to be used within any OSC compatible environment (Max/MSP, Python, PD, C++, Processing, you name it). This is effectively PoseNet + [osc-js](https://github.com/colinbdclark/osc.js/). 
 
 [PoseNet](https://github.com/tensorflow/tfjs-models/tree/master/posenet) is a wabcam-based real-time motion tracking system that runs in a browser using TensorFlow. 
 
