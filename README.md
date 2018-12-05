@@ -1,6 +1,6 @@
 # Posenet to OSC 
 
-This repository contains a modified version of [PoseNet](https://github.com/tensorflow/tfjs-models/tree/master/posenet) by [Dan Oved](https://www.danioved.com/) that sends detected keypoints as OSC encoded datagram packets. This enables tracked keypoints to be used within any OSC compatible environment (Max/MSP, Python, you name it). This is effectively PoseNet + osc-js. 
+This repository contains a modified version of [PoseNet](https://github.com/tensorflow/tfjs-models/tree/master/posenet) by [Dan Oved](https://www.danioved.com/) that sends detected keypoints as OSC encoded datagram packets. This enables tracked keypoints to be used within any OSC compatible environment (Max/MSP, Python, PD, C++, Processing, you name it). This is effectively PoseNet + osc-js. 
 
 [PoseNet](https://github.com/tensorflow/tfjs-models/tree/master/posenet) is a wabcam-based real-time motion tracking system that runs in a browser using TensorFlow. 
 
@@ -53,7 +53,7 @@ In Firefox or Chrome, browse to [http://localhost:1234](http://localhost:1234)
 
 Now keypoints can be received as OSC messages on port 9876.
 
-OSC messages will have an address pattern `/pose/n`, where `n` is the number of different poses (people) found in a frame, and all keypoints will follow as arguments in the order `| part | x | y |` where part is the keypoint body part (string) and x and y are the coordinates of the part (floats).
+OSC messages will have an address pattern `/pose/n`, where `n` is the number of different poses (people) found in a frame, and all keypoints will follow as arguments in the order `part, x, y` where `part` is the keypoint body part (string) and `x` and `y` are the coordinates of the part (floats).
 
 ### Keypoints
 
