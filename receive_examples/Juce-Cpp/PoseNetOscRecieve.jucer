@@ -4,11 +4,11 @@
   <MAINGROUP id="yRLLNQ" name="PoseNetOscRecieve">
     <GROUP id="{B719E650-D6AF-4497-A045-445C471C8701}" name="Source">
       <FILE id="PGKlY2" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
-      <FILE id="pxVk0H" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="Gw0Vma" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
-      <FILE id="PKPTn6" name="PoseDisplay.cpp" compile="1" resource="0" file="/Users/tj3-mitchell/Desktop/Somaya/posenetosc/oscexamples/PoseNetOscRecieve/Source/PoseDisplay.cpp"/>
-      <FILE id="pNY0wv" name="PoseDisplay.h" compile="0" resource="0" file="/Users/tj3-mitchell/Desktop/Somaya/posenetosc/oscexamples/PoseNetOscRecieve/Source/PoseDisplay.h"/>
+      <FILE id="pxVk0H" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
+      <FILE id="hUzysi" name="PoseDisplay.cpp" compile="1" resource="0" file="Source/PoseDisplay.cpp"/>
+      <FILE id="BgsOYB" name="PoseDisplay.h" compile="0" resource="0" file="Source/PoseDisplay.h"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>

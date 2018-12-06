@@ -31,9 +31,8 @@ private:
     //OSCReceiver::Listener=========================================================
     void oscMessageReceived (const OSCMessage& message) override;
 
-    const int numPoses = {5};
     OSCReceiver oscReceiver;
-    std::vector<std::unique_ptr<PoseDisplay>> poseDisplays;
+    PoseDisplay poseDisplay;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };
