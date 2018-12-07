@@ -23,8 +23,9 @@ public:
     //Component
     void paint (Graphics& g) override;
     
+private:
     //Timer
     void timerCallback() override;
-private:
+    
     std::vector<OSCMessage> poses;
 };
