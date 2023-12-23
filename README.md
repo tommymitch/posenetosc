@@ -14,41 +14,27 @@ PoseNet can be used to estimate either a single pose or multiple poses, meaning 
 
 [Refer to this blog post](https://medium.com/tensorflow/real-time-human-pose-estimation-in-the-browser-with-tensorflow-js-7dd0bc881cd5) for a high-level description of PoseNet running on Tensorflow.js.
 
+## UPDATES:
+
+This repo is a fork of [tommymitch/posenetosc](https://github.com/tommymitch/posenetosc)
+
+- Upgraded NodeJS to version `19.2.0`
+- Switched to using Vite as the build tool, replacing the previous choice of Parcel
+- Added `concurrently` to run the app and OSC bridge script together
+- Added `@vitejs/plugin-basic-ssl` to enable https and webcam capture over localhost
+- Switched to using `pnpm` instead of `yarn`
+
 ## Installation
 
 To get this running stand alone on your computer, clone this repo and follow these steps:
 
-Install node (using [homebrew](https://brew.sh/)):
+- Install node and pnpm
+- Install dependencies: `pnpm i`
+- Run `pnpm dev`
 
-```sh
-brew install node
-```
+It will run concurrently `vite` and `node bridge.cjs` (OSC bridge)
 
-Install yarn:
-
-```sh
-brew install yarn
-```
-
-Install dependencies and prepare the build directory:
-
-```sh
-yarn
-```
-
-Watch files for changes, and launch a dev server:
-
-```sh
-yarn watch
-``` 
-
-In another terminal window run the bridge node application:
-
-```sh
-node bridge.js
-``` 
-
-In Firefox or Chrome, browse to [http://localhost:1234](http://localhost:1234)
+In Firefox or Chrome, browse to [https://localhost:1234](https://localhost:1234)
 
 
 Now keypoints can be received as OSC messages on port 9876.
