@@ -1,7 +1,9 @@
 node_modules
 dist/
 .cache
+.DS_Store
 yarn.lock
+pnpm-lock.yaml
 
 **/*/node_modules
 **/*/coverage
