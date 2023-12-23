@@ -24,7 +24,7 @@ const videoWidth = 600;
 const videoHeight = 500;
 const stats = new Stats();
 
-const OSC = require('osc-js');
+import OSC from 'osc-js';
 var osc = new OSC();
 osc.open();
 
